@@ -1,7 +1,3 @@
-// Практическое занятие №11, задача №1. Маршрут с максимальной суммой баллов
-// из левого верхнего угла в правый нижний (ходы только вниз и вправо).
-// Клоков Иван Николаевич, ЭФБО-07-26
-// Ввод: N M, затем N строк по M чисел. Вывод: координаты клеток маршрута.
 #include <iostream>
 #include <vector>
 
@@ -14,7 +10,6 @@ int main()
         for (auto& value : row)
             std::cin >> value;
 
-    // best[i][j] - максимальная сумма, с которой можно прийти в клетку (i, j)
     std::vector<std::vector<long long>> best(rows, std::vector<long long>(cols));
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < cols; ++j) {
@@ -28,7 +23,6 @@ int main()
         }
     }
 
-    // Восстанавливаем маршрут с конца: идём туда, откуда пришёл максимум
     std::vector<std::pair<int, int>> path;
     int i = rows - 1, j = cols - 1;
     while (true) {

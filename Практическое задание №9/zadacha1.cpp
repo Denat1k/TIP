@@ -1,12 +1,8 @@
-// Практическое занятие №9, задача №1. Удаление букв фразы "user agreement".
-// Клоков Иван Николаевич, ЭФБО-07-26
-// Вход: input.txt, выход: output.txt
 #include <cctype>
 #include <fstream>
 #include <iostream>
 #include <string>
 
-// true, если символ - буква из "user agreement" (без учёта регистра)
 bool isForbidden(char symbol)
 {
     const std::string forbidden = "useragreement";
@@ -23,7 +19,6 @@ int main()
         return 1;
     }
 
-    // Посимвольно копируем всё, кроме запрещённых букв
     char symbol;
     while (input.get(symbol))
         if (!isForbidden(symbol))

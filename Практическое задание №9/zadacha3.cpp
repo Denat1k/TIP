@@ -1,15 +1,9 @@
-// Практическое занятие №9, задача №3. Замена чисел в строке на двоичную запись.
-// Клоков Иван Николаевич, ЭФБО-07-26
-// Вход: input.txt, выход: output.txt.
-// Число может быть длиной до 255 цифр, поэтому перевод делается
-// делением десятичной строки на 2, а не через long long.
 #include <algorithm>
 #include <cctype>
 #include <fstream>
 #include <iostream>
 #include <string>
 
-// Делит десятичное число-строку на 2, возвращает остаток
 int divideByTwo(std::string& number)
 {
     std::string quotient;
@@ -24,7 +18,6 @@ int divideByTwo(std::string& number)
     return carry;
 }
 
-// Переводит десятичное число-строку в двоичную запись
 std::string toBinary(std::string number)
 {
     if (number == "0")
@@ -46,7 +39,6 @@ int main()
     std::string line, result;
     std::getline(input, line);
 
-    // Проходим строку, выделяя подряд идущие цифры как одно число
     for (size_t i = 0; i < line.size();) {
         if (std::isdigit(static_cast<unsigned char>(line[i]))) {
             size_t end = i;

@@ -1,11 +1,7 @@
-// Практическое занятие №9, задача №2. Является ли Y подстрокой X.
-// Клоков Иван Николаевич, ЭФБО-07-26
-// X читается из input1.txt, Y - из input2.txt.
 #include <fstream>
 #include <iostream>
 #include <string>
 
-// Читает первую строку файла; false, если файл не открылся
 bool readLine(const std::string& fileName, std::string& line)
 {
     std::ifstream file(fileName);

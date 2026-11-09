@@ -1,11 +1,3 @@
-// Практическое занятие №12, задача №1. Лабиринт с pdf-файлами.
-// Клоков Иван Николаевич, ЭФБО-07-26
-//
-// Условие не задаёт старт и правила движения, поэтому, как в практике №11:
-// старт - левая верхняя клетка, ходы только вправо и вниз.
-// Ввод: N M, затем N строк по M символов (0 - пусто, 1 - стена, P - pdf, E - выход),
-// пробелы между символами допускаются.
-// Вывод: максимум pdf на пути к выходу или -1, если выход недостижим.
 #include <algorithm>
 #include <iostream>
 #include <vector>
@@ -17,9 +9,8 @@ int main()
     std::vector<std::vector<char>> maze(rows, std::vector<char>(cols));
     for (auto& row : maze)
         for (char& cell : row)
-            std::cin >> cell;  // >> пропускает пробелы и переводы строк
+            std::cin >> cell;
 
-    // collected[i][j] - максимум pdf, с которым можно дойти до (i, j); -1 - недостижимо
     const int UNREACHABLE = -1;
     std::vector<std::vector<int>> collected(rows, std::vector<int>(cols, UNREACHABLE));
     int answer = UNREACHABLE;
